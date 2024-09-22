@@ -1,58 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Astrology Overview</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 { font-family: "Karma", sans-serif; }
+        .w3-bar-block .w3-bar-item { padding: 20px; }
+        .w3-quarter img { width: 100%; height: auto; }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Daily Astrology Overview</h1>
-        <div class="grid-container">
-            <div class="grid-item" id="horoscope">
-                <h2>Horoscope</h2>
-                <p>Loading...</p>
-            </div>
-            <div class="grid-item" id="zodiac-signs">
-                <h2>Zodiac Signs</h2>
-                <p>Loading...</p>
-            </div>
-            <div class="grid-item" id="compatibility">
-                <h2>Astrology Compatibility</h2>
-                <p>Loading...</p>
-            </div>
-            <div class="grid-item" id="birth-chart">
-                <h2>Birth Chart</h2>
-                <p>Loading...</p>
-            </div>
-            <div class="grid-item" id="mercury-retrograde">
-                <h2>Mercury Retrograde</h2>
-                <p>Loading...</p>
-            </div>
-            <div class="grid-item" id="rising-sign">
-                <h2>Rising Sign</h2>
-                <p>Loading...</p>
-            </div>
-            <div class="grid-item" id="moon-sign">
-                <h2>Moon Sign</h2>
-                <p>Loading...</p>
-            </div>
-            <div class="grid-item" id="forecast">
-                <h2>Astrological Forecast</h2>
-                <p>Loading...</p>
-            </div>
-            <div class="grid-item" id="traits">
-                <h2>Zodiac Traits</h2>
-                <p>Loading...</p>
-            </div>
-            <div class="grid-item" id="houses">
-                <h2>Astrological Houses</h2>
-                <p>Loading...</p>
-            </div>
+
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button">Close Menu</a>
+    <a href="#horoscope" onclick="w3_close()" class="w3-bar-item w3-button">Horoscope</a>
+    <a href="#zodiac-signs" onclick="w3_close()" class="w3-bar-item w3-button">Zodiac Signs</a>
+    <a href="#compatibility" onclick="w3_close()" class="w3-bar-item w3-button">Compatibility</a>
+    <a href="#birth-chart" onclick="w3_close()" class="w3-bar-item w3-button">Birth Chart</a>
+</nav>
+
+<!-- Top menu -->
+<div class="w3-top">
+    <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+        <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+        <div class="w3-right w3-padding-16">Contact</div>
+        <div class="w3-center w3-padding-16">Astrology Insights</div>
+    </div>
+</div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+    <!-- Astrological Details Grid -->
+    <div class="w3-row-padding w3-padding-16 w3-center">
+        <div class="w3-quarter" id="horoscope">
+            <h3>Horoscope</h3>
+            <img src="https://example.com/horoscope.jpg" alt="Horoscope Image">
+            <p>Loading...</p>
+        </div>
+        <div class="w3-quarter" id="zodiac-signs">
+            <h3>Zodiac Signs</h3>
+            <img src="https://example.com/zodiac.jpg" alt="Zodiac Signs Image">
+            <p>Loading...</p>
+        </div>
+        <div class="w3-quarter" id="compatibility">
+            <h3>Astrology Compatibility</h3>
+            <img src="https://example.com/compatibility.jpg" alt="Compatibility Image">
+            <p>Loading...</p>
+        </div>
+        <div class="w3-quarter" id="birth-chart">
+            <h3>Birth Chart</h3>
+            <img src="https://example.com/birth-chart.jpg" alt="Birth Chart Image">
+            <p>Loading...</p>
         </div>
     </div>
 
-    <script src="scripts.js"></script>
+    <hr id="about">
+
+    <!-- About Section -->
+    <div class="w3-container w3-padding-32 w3-center">
+        <h3>About Astrology</h3>
+        <p>Astrology is the study of the movements and relative positions of celestial bodies interpreted as having an influence on human affairs and the natural world.</p>
+    </div>
+    <hr>
+
+    <!-- Footer -->
+    <footer class="w3-row-padding w3-padding-32">
+        <div class="w3-third">
+            <h3>FOOTER</h3>
+            <p>Explore the universe of astrology and its influence on our lives.</p>
+            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+        </div>
+    </footer>
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+
+// Astrological Details JavaScript
+document.addEventListener("DOMContentLoaded", function() {
+    const dailyHoroscope = {
+        horoscope: "Today's horoscope is positive for new beginnings.",
+        zodiacSigns: "Zodiac signs can guide you on emotional and practical paths.",
+        compatibility: "Astrology compatibility: Aries and Leo are a perfect match today.",
+        birthChart: "Your birth chart reveals deep insights about your career and love life."
+    };
+
+    document.getElementById("horoscope").querySelector("p").innerText = dailyHoroscope.horoscope;
+    document.getElementById("zodiac-signs").querySelector("p").innerText = dailyHoroscope.zodiacSigns;
+    document.getElementById("compatibility").querySelector("p").innerText = dailyHoroscope.compatibility;
+    document.getElementById("birth-chart").querySelector("p").innerText = dailyHoroscope.birthChart;
+});
+</script>
+
 </body>
 </html>
