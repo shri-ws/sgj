@@ -7,13 +7,18 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
     <style>
-        body, h1, h2, h3, h4, h5, h6 { font-family: "Karma", sans-serif; }
+        body, h1, h2, h3, h4, h5, h6 { 
+            font-family: "Karma", sans-serif; 
+        }
         .w3-bar-block .w3-bar-item { padding: 20px; }
         .w3-quarter img { width: 100%; height: auto; }
+        
+        /* Header Styles */
         .header {
             position: relative;
             text-align: center;
             color: white;
+            animation: fadeIn 2s ease-in-out; /* Animation for fade-in effect */
         }
         .header img {
             width: 100%;
@@ -25,8 +30,71 @@
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 3em;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
+        }
+
+        /* Responsive Grid Styling */
+        .w3-row-padding {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .w3-quarter {
+            flex: 1 1 20%; /* Flexbox for responsive grid */
+            margin: 10px;
+            transition: transform 0.3s ease; /* Animation for hover effect */
+        }
+        .w3-quarter:hover {
+            transform: scale(1.05); /* Zoom-in effect on hover */
+        }
+        .w3-quarter img {
+            border-radius: 10px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media Queries for smaller screens */
+        @media screen and (max-width: 768px) {
+            .w3-quarter {
+                flex: 1 1 45%;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .w3-quarter {
+                flex: 1 1 100%;
+            }
+            .header h1 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
@@ -35,7 +103,7 @@
 <!-- Header with Cover Photo -->
 <div class="header">
     <img src="cvr.jpg" alt="Astrology Cover Photo">
-    
+    <h1>Shri Gaargi Jyotish</h1>
 </div>
 
 <!-- Sidebar (hidden by default) -->
