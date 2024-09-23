@@ -149,6 +149,11 @@
             <img src="birth-chart.jpg" alt="Birth Chart Image">
             <p>Loading...</p>
         </div>
+        <div class="w3-quarter" id="remedies">
+            <h3>Astrological Remedies</h3>
+            <img src="https://via.placeholder.com/150" alt="Remedies Image">
+            <p>Loading...</p>
+        </div>
     </div>
 
     <hr id="fun-facts">
@@ -200,15 +205,9 @@ document.addEventListener("DOMContentLoaded", function() {
         horoscope: "Today's horoscope is positive for new beginnings.",
         zodiacSigns: "Zodiac signs can guide you on emotional and practical paths.",
         compatibility: "Astrology compatibility: Aries and Leo are a perfect match today.",
-        birthChart: "Your birth chart reveals deep insights about your career and love life."
+        birthChart: "Your birth chart reveals deep insights about your career and love life.",
+        remedies: "Today's remedy: Wearing a gemstone can boost positive energy."
     };
 
     document.getElementById("horoscope").querySelector("p").innerText = dailyHoroscope.horoscope;
-    document.getElementById("zodiac-signs").querySelector("p").innerText = dailyHoroscope.zodiacSigns;
-    document.getElementById("compatibility").querySelector("p").innerText = dailyHoroscope.compatibility;
-    document.getElementById("birth-chart").querySelector("p").innerText = dailyHoroscope.birthChart;
-});
-</script>
-
-</body>
-</html>
+    document.getElementById("zodiac-signs").querySelector("p").
